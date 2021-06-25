@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RESULT>
+  <CODE>ERROR-300</CODE>
+  <MESSAGE>필수 값이 누락되어 있습니다. 요청인자를 참고 하십시오.</MESSAGE>
+</RESULT>
+
