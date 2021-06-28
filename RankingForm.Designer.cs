@@ -55,6 +55,7 @@ namespace BobNaeNwa
             this.buttonYear.TabIndex = 1;
             this.buttonYear.Text = "연간";
             this.buttonYear.UseVisualStyleBackColor = true;
+            this.buttonYear.Click += new System.EventHandler(this.buttonYear_Click);
             // 
             // buttonMonth
             // 
@@ -65,6 +66,7 @@ namespace BobNaeNwa
             this.buttonMonth.TabIndex = 1;
             this.buttonMonth.Text = "월간";
             this.buttonMonth.UseVisualStyleBackColor = true;
+            this.buttonMonth.Click += new System.EventHandler(this.buttonMonth_Click);
             // 
             // buttonWeek
             // 
@@ -75,6 +77,7 @@ namespace BobNaeNwa
             this.buttonWeek.TabIndex = 1;
             this.buttonWeek.Text = "주간";
             this.buttonWeek.UseVisualStyleBackColor = true;
+            this.buttonWeek.Click += new System.EventHandler(this.buttonWeek_Click);
             // 
             // labelMaker
             // 

@@ -21,12 +21,13 @@ namespace BobNaeNwa
 
             UpdateMeal();
         }
-
+        // 이전날 급식 요청하는 함수
         private void buttonPrev_Click(object sender, EventArgs e)
         {
             date = date.AddDays(-1);
             UpdateMeal();
         }
+        // 오늘 급식 요청하는 함수
         private void buttonDate_Click(object sender, EventArgs e)
         {
             if (date != DateTime.Now)
@@ -35,27 +36,25 @@ namespace BobNaeNwa
                 UpdateMeal();
             }
         }
+        // 다음날 급식 요청하는 함수
         private void buttonNext_Click(object sender, EventArgs e)
         {
             date = date.AddDays(1);
             UpdateMeal();
         }
         
+        // 급식 뿌리는 함수
         private void UpdateMeal()
         {
+            // 리스트 클리어
             breakfastList.Items.Clear();
             lunchList.Items.Clear();
             dinnerList.Items.Clear();
 
+            // 날짜 세팅
             buttonDate.Text = date.ToString("yyyy년 MM월 dd일 ") + $"{GetDay(date)}요일";
 
-            /*
-            string[] mealList = ParseMeal.GetMeal(date.ToString("yyyyMMdd"));
-            labelBreakfast.Text = mealList[0];
-            labelLunch.Text = mealList[1];
-            labelDinner.Text = mealList[2];
-            */
-
+            // 급식 요청
             ArrayList[] mealList = ParseMeal.GetMeals(date.ToString("yyyyMMdd"));
 
             foreach (string meal in mealList[0])
@@ -72,8 +71,7 @@ namespace BobNaeNwa
             }
         }
 
-
-
+        // 몇요일인지 구하는 함수
         private string GetDay(DateTime dt)
         {
             string strDay = "";
@@ -106,6 +104,8 @@ namespace BobNaeNwa
             return strDay;
         }
 
+        // 급식을 클릭했을 때 이벤트
+        /*
         private void OnMealDoubleClick(object sender, MouseEventArgs e)
         {
             ListBox listBox = sender as ListBox;
@@ -120,13 +120,35 @@ namespace BobNaeNwa
                 // 선택된 항목 저장
                 string selectedItem = listBox.Items[selectedIndex].ToString();
 
-                MessageBox.Show($"{selectedItem}(이)가 저장되었습니다.", "저장 완료");
+                textBox1.Text = selectedItem;
             }
         }
+        */
 
-        private void button1_Click(object sender, EventArgs e)
+        // 좋아요 버튼
+        private void buttonLike_Click(object sender, EventArgs e)
+        {
+            string selectedMeal = textBox1.Text.Trim();
+            if (selectedMeal == "")
+                return;
+            
+            MessageBox.Show($"{selectedMeal} (은)는 맛있습니다.", "맛있다!");
+
+            /* TODO
+                DB에 selectedMeal 추가 or 뭐시기
+            */
+        }
+        // 맛있었던 급식 버튼
+        private void buttonRank_Click(object sender, EventArgs e)
         {
             new RankingForm().ShowDialog();
+        }
+
+        private void OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListBox list = sender as ListBox;
+
+            textBox1.Text = list.SelectedItem.ToString();
         }
     }
 }
