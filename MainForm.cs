@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,8 +29,11 @@ namespace BobNaeNwa
         }
         private void buttonDate_Click(object sender, EventArgs e)
         {
-            date = DateTime.Now;
-            UpdateMeal();
+            if (date != DateTime.Now)
+            {
+                date = DateTime.Now;
+                UpdateMeal();
+            }
         }
         private void buttonNext_Click(object sender, EventArgs e)
         {
@@ -39,13 +43,33 @@ namespace BobNaeNwa
         
         private void UpdateMeal()
         {
-            string[] mealList = ParseMeal.GetMeal(date.ToString("yyyyMMdd"));
+            breakfastList.Items.Clear();
+            lunchList.Items.Clear();
+            dinnerList.Items.Clear();
 
             buttonDate.Text = date.ToString("yyyy년 MM월 dd일 ") + $"{GetDay(date)}요일";
 
+            /*
+            string[] mealList = ParseMeal.GetMeal(date.ToString("yyyyMMdd"));
             labelBreakfast.Text = mealList[0];
             labelLunch.Text = mealList[1];
             labelDinner.Text = mealList[2];
+            */
+
+            ArrayList[] mealList = ParseMeal.GetMeals(date.ToString("yyyyMMdd"));
+
+            foreach (string meal in mealList[0])
+            {
+                breakfastList.Items.Add(meal);
+            }
+            foreach (string meal in mealList[1])
+            {
+                lunchList.Items.Add(meal);
+            }
+            foreach (string meal in mealList[2])
+            {
+                dinnerList.Items.Add(meal);
+            }
         }
 
 
@@ -82,6 +106,31 @@ namespace BobNaeNwa
             return strDay;
         }
 
+        private void breakfastList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // 인덱스를 저장할 변수
+            int selectedIndex = -1; 
+            // 마우스 포인터의 위치
+            Point point = e.Location; 
+            // 리스트 박스의 IndexFromPoint 메서드 호출
+            selectedIndex = breakfastList.IndexFromPoint(point); 
+            if(selectedIndex != -1) // 빈 공간이 아닌 곳을 더블클릭 했을 때.
+            { 
+                // 선택된 항목 저장
+                string selectedItem = breakfastList.Items[selectedIndex] as string; 
+                // 선택한 항목으로 텍스트 대입
+                label1.Text = selectedItem; 
+            }
+        }
 
+        private void lunchList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void dinnerList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

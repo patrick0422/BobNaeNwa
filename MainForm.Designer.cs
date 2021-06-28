@@ -30,88 +30,59 @@ namespace BobNaeNwa
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.BreakfastBox = new System.Windows.Forms.GroupBox();
-            this.labelBreakfast = new System.Windows.Forms.Label();
-            this.DinnerBox = new System.Windows.Forms.GroupBox();
-            this.labelDinner = new System.Windows.Forms.Label();
-            this.LunchBox = new System.Windows.Forms.GroupBox();
-            this.labelLunch = new System.Windows.Forms.Label();
+            this.breakfastWrap = new System.Windows.Forms.GroupBox();
+            this.dinnerWrap = new System.Windows.Forms.GroupBox();
+            this.LunchWrap = new System.Windows.Forms.GroupBox();
             this.buttonPrev = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.labelMaker = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.buttonDate = new System.Windows.Forms.Button();
-            this.BreakfastBox.SuspendLayout();
-            this.DinnerBox.SuspendLayout();
-            this.LunchBox.SuspendLayout();
+            this.breakfastList = new System.Windows.Forms.ListBox();
+            this.lunchList = new System.Windows.Forms.ListBox();
+            this.dinnerList = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.breakfastWrap.SuspendLayout();
+            this.dinnerWrap.SuspendLayout();
+            this.LunchWrap.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BreakfastBox
+            // breakfastWrap
             // 
-            this.BreakfastBox.BackColor = System.Drawing.Color.Transparent;
-            this.BreakfastBox.Controls.Add(this.labelBreakfast);
-            this.BreakfastBox.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.BreakfastBox.Location = new System.Drawing.Point(12, 62);
-            this.BreakfastBox.Name = "BreakfastBox";
-            this.BreakfastBox.Size = new System.Drawing.Size(241, 361);
-            this.BreakfastBox.TabIndex = 0;
-            this.BreakfastBox.TabStop = false;
-            this.BreakfastBox.Text = "조식";
+            this.breakfastWrap.BackColor = System.Drawing.Color.Transparent;
+            this.breakfastWrap.Controls.Add(this.breakfastList);
+            this.breakfastWrap.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.breakfastWrap.Location = new System.Drawing.Point(12, 62);
+            this.breakfastWrap.Name = "breakfastWrap";
+            this.breakfastWrap.Size = new System.Drawing.Size(241, 361);
+            this.breakfastWrap.TabIndex = 0;
+            this.breakfastWrap.TabStop = false;
+            this.breakfastWrap.Text = "조식";
             // 
-            // labelBreakfast
+            // dinnerWrap
             // 
-            this.labelBreakfast.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelBreakfast.Location = new System.Drawing.Point(6, 33);
-            this.labelBreakfast.Name = "labelBreakfast";
-            this.labelBreakfast.Size = new System.Drawing.Size(229, 325);
-            this.labelBreakfast.TabIndex = 0;
-            this.labelBreakfast.Text = "조식";
-            this.labelBreakfast.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dinnerWrap.BackColor = System.Drawing.Color.Transparent;
+            this.dinnerWrap.Controls.Add(this.dinnerList);
+            this.dinnerWrap.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dinnerWrap.Location = new System.Drawing.Point(547, 62);
+            this.dinnerWrap.Name = "dinnerWrap";
+            this.dinnerWrap.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dinnerWrap.Size = new System.Drawing.Size(241, 361);
+            this.dinnerWrap.TabIndex = 0;
+            this.dinnerWrap.TabStop = false;
+            this.dinnerWrap.Text = "석식";
             // 
-            // DinnerBox
+            // LunchWrap
             // 
-            this.DinnerBox.BackColor = System.Drawing.Color.Transparent;
-            this.DinnerBox.Controls.Add(this.labelDinner);
-            this.DinnerBox.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.DinnerBox.Location = new System.Drawing.Point(547, 62);
-            this.DinnerBox.Name = "DinnerBox";
-            this.DinnerBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DinnerBox.Size = new System.Drawing.Size(241, 361);
-            this.DinnerBox.TabIndex = 0;
-            this.DinnerBox.TabStop = false;
-            this.DinnerBox.Text = "석식";
-            // 
-            // labelDinner
-            // 
-            this.labelDinner.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelDinner.Location = new System.Drawing.Point(6, 33);
-            this.labelDinner.Name = "labelDinner";
-            this.labelDinner.Size = new System.Drawing.Size(229, 325);
-            this.labelDinner.TabIndex = 0;
-            this.labelDinner.Text = "석식";
-            this.labelDinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LunchBox
-            // 
-            this.LunchBox.BackColor = System.Drawing.Color.Transparent;
-            this.LunchBox.Controls.Add(this.labelLunch);
-            this.LunchBox.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.LunchBox.Location = new System.Drawing.Point(279, 62);
-            this.LunchBox.Name = "LunchBox";
-            this.LunchBox.Size = new System.Drawing.Size(241, 361);
-            this.LunchBox.TabIndex = 0;
-            this.LunchBox.TabStop = false;
-            this.LunchBox.Text = "중식";
-            // 
-            // labelLunch
-            // 
-            this.labelLunch.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelLunch.Location = new System.Drawing.Point(6, 33);
-            this.labelLunch.Name = "labelLunch";
-            this.labelLunch.Size = new System.Drawing.Size(229, 325);
-            this.labelLunch.TabIndex = 0;
-            this.labelLunch.Text = "중식";
-            this.labelLunch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LunchWrap.BackColor = System.Drawing.Color.Transparent;
+            this.LunchWrap.Controls.Add(this.lunchList);
+            this.LunchWrap.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.LunchWrap.Location = new System.Drawing.Point(279, 62);
+            this.LunchWrap.Name = "LunchWrap";
+            this.LunchWrap.Size = new System.Drawing.Size(241, 361);
+            this.LunchWrap.TabIndex = 0;
+            this.LunchWrap.TabStop = false;
+            this.LunchWrap.Text = "중식";
             // 
             // buttonPrev
             // 
@@ -163,24 +134,64 @@ namespace BobNaeNwa
             this.buttonDate.UseVisualStyleBackColor = true;
             this.buttonDate.Click += new System.EventHandler(this.buttonDate_Click);
             // 
+            // breakfastList
+            // 
+            this.breakfastList.FormattingEnabled = true;
+            this.breakfastList.ItemHeight = 25;
+            this.breakfastList.Location = new System.Drawing.Point(6, 26);
+            this.breakfastList.Name = "breakfastList";
+            this.breakfastList.Size = new System.Drawing.Size(229, 329);
+            this.breakfastList.TabIndex = 0;
+            this.breakfastList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.breakfastList_MouseDoubleClick);
+            // 
+            // lunchList
+            // 
+            this.lunchList.FormattingEnabled = true;
+            this.lunchList.ItemHeight = 25;
+            this.lunchList.Location = new System.Drawing.Point(6, 26);
+            this.lunchList.Name = "lunchList";
+            this.lunchList.Size = new System.Drawing.Size(229, 329);
+            this.lunchList.TabIndex = 0;
+            this.lunchList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lunchList_MouseDoubleClick);
+            // 
+            // dinnerList
+            // 
+            this.dinnerList.FormattingEnabled = true;
+            this.dinnerList.ItemHeight = 25;
+            this.dinnerList.Location = new System.Drawing.Point(6, 26);
+            this.dinnerList.Name = "dinnerList";
+            this.dinnerList.Size = new System.Drawing.Size(229, 329);
+            this.dinnerList.TabIndex = 0;
+            this.dinnerList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dinnerList_MouseDoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(97, 437);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 12);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
             // BobNaeNwa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 465);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDate);
             this.Controls.Add(this.labelMaker);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonPrev);
-            this.Controls.Add(this.LunchBox);
-            this.Controls.Add(this.DinnerBox);
-            this.Controls.Add(this.BreakfastBox);
+            this.Controls.Add(this.LunchWrap);
+            this.Controls.Add(this.dinnerWrap);
+            this.Controls.Add(this.breakfastWrap);
             this.Name = "BobNaeNwa";
             this.Text = "밥내놔";
-            this.BreakfastBox.ResumeLayout(false);
-            this.DinnerBox.ResumeLayout(false);
-            this.LunchBox.ResumeLayout(false);
+            this.breakfastWrap.ResumeLayout(false);
+            this.dinnerWrap.ResumeLayout(false);
+            this.LunchWrap.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,17 +199,18 @@ namespace BobNaeNwa
 
         #endregion
 
-        private System.Windows.Forms.GroupBox BreakfastBox;
-        private System.Windows.Forms.GroupBox DinnerBox;
-        private System.Windows.Forms.GroupBox LunchBox;
+        private System.Windows.Forms.GroupBox breakfastWrap;
+        private System.Windows.Forms.GroupBox dinnerWrap;
+        private System.Windows.Forms.GroupBox LunchWrap;
         private System.Windows.Forms.Button buttonPrev;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Label labelMaker;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label labelBreakfast;
-        private System.Windows.Forms.Label labelDinner;
-        private System.Windows.Forms.Label labelLunch;
         private System.Windows.Forms.Button buttonDate;
+        private System.Windows.Forms.ListBox breakfastList;
+        private System.Windows.Forms.ListBox dinnerList;
+        private System.Windows.Forms.ListBox lunchList;
+        private System.Windows.Forms.Label label1;
     }
 }
 
