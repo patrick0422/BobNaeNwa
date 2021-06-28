@@ -50,7 +50,7 @@ namespace BobNaeNwa
             // 
             this.breakfastWrap.BackColor = System.Drawing.Color.Transparent;
             this.breakfastWrap.Controls.Add(this.breakfastList);
-            this.breakfastWrap.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.breakfastWrap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.breakfastWrap.Location = new System.Drawing.Point(12, 62);
             this.breakfastWrap.Name = "breakfastWrap";
             this.breakfastWrap.Size = new System.Drawing.Size(241, 377);
@@ -60,7 +60,7 @@ namespace BobNaeNwa
             // 
             // breakfastList
             // 
-            this.breakfastList.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.breakfastList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.breakfastList.FormattingEnabled = true;
             this.breakfastList.ItemHeight = 25;
             this.breakfastList.Location = new System.Drawing.Point(6, 36);
@@ -73,7 +73,7 @@ namespace BobNaeNwa
             // 
             this.dinnerWrap.BackColor = System.Drawing.Color.Transparent;
             this.dinnerWrap.Controls.Add(this.dinnerList);
-            this.dinnerWrap.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dinnerWrap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dinnerWrap.Location = new System.Drawing.Point(547, 62);
             this.dinnerWrap.Name = "dinnerWrap";
             this.dinnerWrap.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -84,7 +84,7 @@ namespace BobNaeNwa
             // 
             // dinnerList
             // 
-            this.dinnerList.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dinnerList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dinnerList.FormattingEnabled = true;
             this.dinnerList.ItemHeight = 25;
             this.dinnerList.Location = new System.Drawing.Point(6, 36);
@@ -97,7 +97,7 @@ namespace BobNaeNwa
             // 
             this.LunchWrap.BackColor = System.Drawing.Color.Transparent;
             this.LunchWrap.Controls.Add(this.lunchList);
-            this.LunchWrap.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.LunchWrap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.LunchWrap.Location = new System.Drawing.Point(279, 62);
             this.LunchWrap.Name = "LunchWrap";
             this.LunchWrap.Size = new System.Drawing.Size(241, 377);
@@ -107,7 +107,7 @@ namespace BobNaeNwa
             // 
             // lunchList
             // 
-            this.lunchList.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lunchList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lunchList.FormattingEnabled = true;
             this.lunchList.ItemHeight = 25;
             this.lunchList.Location = new System.Drawing.Point(6, 36);
@@ -118,7 +118,7 @@ namespace BobNaeNwa
             // 
             // buttonPrev
             // 
-            this.buttonPrev.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonPrev.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.buttonPrev.Location = new System.Drawing.Point(12, 12);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(104, 29);
@@ -129,7 +129,7 @@ namespace BobNaeNwa
             // 
             // buttonNext
             // 
-            this.buttonNext.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.buttonNext.Location = new System.Drawing.Point(684, 12);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(104, 29);
@@ -140,7 +140,7 @@ namespace BobNaeNwa
             // 
             // buttonDate
             // 
-            this.buttonDate.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.buttonDate.Location = new System.Drawing.Point(279, 12);
             this.buttonDate.Name = "buttonDate";
             this.buttonDate.Size = new System.Drawing.Size(241, 29);
@@ -151,7 +151,7 @@ namespace BobNaeNwa
             // 
             // buttonRank
             // 
-            this.buttonRank.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.buttonRank.Location = new System.Drawing.Point(637, 445);
             this.buttonRank.Name = "buttonRank";
             this.buttonRank.Size = new System.Drawing.Size(151, 29);
@@ -162,7 +162,7 @@ namespace BobNaeNwa
             // 
             // buttonLike
             // 
-            this.buttonLike.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.buttonLike.Location = new System.Drawing.Point(456, 443);
             this.buttonLike.Name = "buttonLike";
             this.buttonLike.Size = new System.Drawing.Size(64, 29);

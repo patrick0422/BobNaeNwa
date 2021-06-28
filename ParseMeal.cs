@@ -3,6 +3,7 @@ using System.Collections;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
 
 class ParseMeal
@@ -70,30 +71,12 @@ class ParseMeal
 
         JToken row = mealServiceDietInfo[1]["row"];
         JArray rowArray = (JArray)row;
-        Console.WriteLine($"rowCount = {rowArray.Count}");
 
 
         for (int i = 0; i < rowArray.Count; i++)
         {
-            string temp = rowArray[i]["DDISH_NM"].ToString();
-
-            string[] meals = temp.Split(new string[] { "<br/>" }, StringSplitOptions.None);
-
-            temp = "";
-            foreach (string s in meals)
-            {
-                string meal = s;
-
-                for (int j = 0; j <= 9; j++)
-                    meal = meal.Split(j.ToString()[0])[0];
-                meal = meal.Split('*')[0];
-
-                temp += meal + "\n";
-            }
-
-
-            mealList[i] = temp;
-            Console.WriteLine(mealList[i]);
+            string temp = Regex.Replace(rowArray[i]["DDISH_NM"].ToString(), @"[^가-힣<br\\>]", "");
+            mealList[i] = Regex.Replace(temp, @"[^<br\\>]", "\n");
         }
 
         return mealList;
