@@ -119,9 +119,14 @@ namespace BobNaeNwa
             {
                 // 선택된 항목 저장
                 string selectedItem = listBox.Items[selectedIndex].ToString();
-                // 선택한 항목으로 텍스트 대입
-                label1.Text = selectedItem;
+
+                MessageBox.Show($"{selectedItem}(이)가 저장되었습니다.", "저장 완료");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new RankingForm().ShowDialog();
         }
     }
 }

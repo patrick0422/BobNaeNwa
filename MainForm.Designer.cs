@@ -42,6 +42,7 @@ namespace BobNaeNwa
             this.lunchList = new System.Windows.Forms.ListBox();
             this.dinnerList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonRank = new System.Windows.Forms.Button();
             this.breakfastWrap.SuspendLayout();
             this.dinnerWrap.SuspendLayout();
             this.LunchWrap.SuspendLayout();
@@ -54,7 +55,7 @@ namespace BobNaeNwa
             this.breakfastWrap.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.breakfastWrap.Location = new System.Drawing.Point(12, 62);
             this.breakfastWrap.Name = "breakfastWrap";
-            this.breakfastWrap.Size = new System.Drawing.Size(241, 361);
+            this.breakfastWrap.Size = new System.Drawing.Size(241, 377);
             this.breakfastWrap.TabIndex = 0;
             this.breakfastWrap.TabStop = false;
             this.breakfastWrap.Text = "조식";
@@ -67,7 +68,7 @@ namespace BobNaeNwa
             this.dinnerWrap.Location = new System.Drawing.Point(547, 62);
             this.dinnerWrap.Name = "dinnerWrap";
             this.dinnerWrap.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dinnerWrap.Size = new System.Drawing.Size(241, 361);
+            this.dinnerWrap.Size = new System.Drawing.Size(241, 377);
             this.dinnerWrap.TabIndex = 0;
             this.dinnerWrap.TabStop = false;
             this.dinnerWrap.Text = "석식";
@@ -79,7 +80,7 @@ namespace BobNaeNwa
             this.LunchWrap.Font = new System.Drawing.Font("AppleSDGothicNeoB00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.LunchWrap.Location = new System.Drawing.Point(279, 62);
             this.LunchWrap.Name = "LunchWrap";
-            this.LunchWrap.Size = new System.Drawing.Size(241, 361);
+            this.LunchWrap.Size = new System.Drawing.Size(241, 377);
             this.LunchWrap.TabIndex = 0;
             this.LunchWrap.TabStop = false;
             this.LunchWrap.Text = "중식";
@@ -111,7 +112,7 @@ namespace BobNaeNwa
             this.labelMaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMaker.AutoSize = true;
             this.labelMaker.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelMaker.Location = new System.Drawing.Point(695, 437);
+            this.labelMaker.Location = new System.Drawing.Point(695, 442);
             this.labelMaker.Name = "labelMaker";
             this.labelMaker.Size = new System.Drawing.Size(93, 17);
             this.labelMaker.TabIndex = 2;
@@ -138,7 +139,7 @@ namespace BobNaeNwa
             // 
             this.breakfastList.FormattingEnabled = true;
             this.breakfastList.ItemHeight = 25;
-            this.breakfastList.Location = new System.Drawing.Point(6, 26);
+            this.breakfastList.Location = new System.Drawing.Point(6, 36);
             this.breakfastList.Name = "breakfastList";
             this.breakfastList.Size = new System.Drawing.Size(229, 329);
             this.breakfastList.TabIndex = 0;
@@ -148,7 +149,7 @@ namespace BobNaeNwa
             // 
             this.lunchList.FormattingEnabled = true;
             this.lunchList.ItemHeight = 25;
-            this.lunchList.Location = new System.Drawing.Point(6, 26);
+            this.lunchList.Location = new System.Drawing.Point(6, 36);
             this.lunchList.Name = "lunchList";
             this.lunchList.Size = new System.Drawing.Size(229, 329);
             this.lunchList.TabIndex = 0;
@@ -158,7 +159,7 @@ namespace BobNaeNwa
             // 
             this.dinnerList.FormattingEnabled = true;
             this.dinnerList.ItemHeight = 25;
-            this.dinnerList.Location = new System.Drawing.Point(6, 26);
+            this.dinnerList.Location = new System.Drawing.Point(6, 36);
             this.dinnerList.Name = "dinnerList";
             this.dinnerList.Size = new System.Drawing.Size(229, 329);
             this.dinnerList.TabIndex = 0;
@@ -167,11 +168,22 @@ namespace BobNaeNwa
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(373, 437);
+            this.label1.Location = new System.Drawing.Point(378, 445);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 12);
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
+            // 
+            // buttonRank
+            // 
+            this.buttonRank.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonRank.Location = new System.Drawing.Point(122, 12);
+            this.buttonRank.Name = "buttonRank";
+            this.buttonRank.Size = new System.Drawing.Size(151, 29);
+            this.buttonRank.TabIndex = 1;
+            this.buttonRank.Text = "맛있었던 급식";
+            this.buttonRank.UseVisualStyleBackColor = true;
+            this.buttonRank.Click += new System.EventHandler(this.button1_Click);
             // 
             // BobNaeNwa
             // 
@@ -183,6 +195,7 @@ namespace BobNaeNwa
             this.Controls.Add(this.buttonDate);
             this.Controls.Add(this.labelMaker);
             this.Controls.Add(this.buttonNext);
+            this.Controls.Add(this.buttonRank);
             this.Controls.Add(this.buttonPrev);
             this.Controls.Add(this.LunchWrap);
             this.Controls.Add(this.dinnerWrap);
@@ -211,6 +224,7 @@ namespace BobNaeNwa
         private System.Windows.Forms.ListBox dinnerList;
         private System.Windows.Forms.ListBox lunchList;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonRank;
     }
 }
 
