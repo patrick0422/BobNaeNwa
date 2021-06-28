@@ -142,7 +142,7 @@ namespace BobNaeNwa
             this.breakfastList.Name = "breakfastList";
             this.breakfastList.Size = new System.Drawing.Size(229, 329);
             this.breakfastList.TabIndex = 0;
-            this.breakfastList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.breakfastList_MouseDoubleClick);
+            this.breakfastList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OnMealDoubleClick);
             // 
             // lunchList
             // 
@@ -152,7 +152,7 @@ namespace BobNaeNwa
             this.lunchList.Name = "lunchList";
             this.lunchList.Size = new System.Drawing.Size(229, 329);
             this.lunchList.TabIndex = 0;
-            this.lunchList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lunchList_MouseDoubleClick);
+            this.lunchList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OnMealDoubleClick);
             // 
             // dinnerList
             // 
@@ -162,12 +162,12 @@ namespace BobNaeNwa
             this.dinnerList.Name = "dinnerList";
             this.dinnerList.Size = new System.Drawing.Size(229, 329);
             this.dinnerList.TabIndex = 0;
-            this.dinnerList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dinnerList_MouseDoubleClick);
+            this.dinnerList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OnMealDoubleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(97, 437);
+            this.label1.Location = new System.Drawing.Point(373, 437);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 12);
             this.label1.TabIndex = 5;

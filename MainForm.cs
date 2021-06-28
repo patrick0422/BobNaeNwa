@@ -106,31 +106,22 @@ namespace BobNaeNwa
             return strDay;
         }
 
-        private void breakfastList_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void OnMealDoubleClick(object sender, MouseEventArgs e)
         {
+            ListBox listBox = sender as ListBox;
             // 인덱스를 저장할 변수
-            int selectedIndex = -1; 
+            int selectedIndex = -1;
             // 마우스 포인터의 위치
-            Point point = e.Location; 
+            Point point = e.Location;
             // 리스트 박스의 IndexFromPoint 메서드 호출
-            selectedIndex = breakfastList.IndexFromPoint(point); 
-            if(selectedIndex != -1) // 빈 공간이 아닌 곳을 더블클릭 했을 때.
-            { 
+            selectedIndex = listBox.IndexFromPoint(point);
+            if (selectedIndex != -1) // 빈 공간이 아닌 곳을 더블클릭 했을 때.
+            {
                 // 선택된 항목 저장
-                string selectedItem = breakfastList.Items[selectedIndex] as string; 
+                string selectedItem = listBox.Items[selectedIndex].ToString();
                 // 선택한 항목으로 텍스트 대입
-                label1.Text = selectedItem; 
+                label1.Text = selectedItem;
             }
-        }
-
-        private void lunchList_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void dinnerList_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
         }
     }
 }
