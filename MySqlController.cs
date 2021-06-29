@@ -5,24 +5,27 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Configuration;
 
 namespace BobNaeNwa
 {
-    class MySqlController
+    public class MySqlController
     {
         private string constr;
-        MySqlController(string address, string port, string DBName, string id, string pw)
+        public MySqlController()
         {
-            this.constr = $"SERVER = {address},{port}; DATABASE = {DBName}; UID = {id}; PASSWORD = {pw};";
+            //var config = new ConfigurationBuilder().AddEnvironmentVariables().Build();
+            this.constr = $"SERVER = localhost, 3306; DATABASE = bobnaenwa; UID = root; PASSWORD = 1163116a;";
         }
-        public DataSet ExcuteSQL(string SQL, string fillMember = "")
+        public DataSet ExcuteSQL(string SQL)
         {
             DataSet ds = new DataSet();
-            using (SqlConnection conn = new SqlConnection(constr))
+            using (SqlConnection conn = new SqlConnection(this.constr))
             {
                 conn.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(SQL, conn);
-                adapter.Fill(ds, fillMember);
+                adapter.Fill(ds);
             }
             return ds;
         }
