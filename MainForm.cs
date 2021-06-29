@@ -131,12 +131,20 @@ namespace BobNaeNwa
             string selectedMeal = textBox1.Text.Trim();
             if (selectedMeal == "")
                 return;
-            
-            MessageBox.Show($"{selectedMeal} (은)는 맛있습니다.", "맛있다!");
+            string[] aboutMeal = selectedMeal.Split("의 ".ToCharArray());
 
             /* TODO
                 DB에 selectedMeal 추가 or 뭐시기
             */
+            
+            //MySqlController msCtr = new MySqlController();
+            //string sql = $"insert into like_meal(timing_idx, menu_name) values ({getTimingIdxFromTimingValue(aboutMeal[0])}, '{aboutMeal[2]}');";
+            //DataSet ds = msCtr.ExcuteSQL(sql);
+            MessageBox.Show($"{aboutMeal[2]} (은)는 맛있습니다.", "맛있다!");
+        }
+        private int getTimingIdxFromTimingValue(string timingValue)
+        {
+            return timingValue == "조식" ? 1 : timingValue == "중식" ? 2 : timingValue == "석식" ? 3 : 0;
         }
         // 맛있었던 급식 버튼
         private void buttonRank_Click(object sender, EventArgs e)
@@ -148,7 +156,13 @@ namespace BobNaeNwa
         {
             ListBox list = sender as ListBox;
 
-            textBox1.Text = list.SelectedItem.ToString();
+            
+
+            textBox1.Text = $"{getMealTimingFromListName(list.Name)}의 {list.SelectedItem.ToString()}";
+        }
+        private string getMealTimingFromListName(string listName)
+        {
+            return listName == "breakfastList" ? "조식" : listName == "lunchList" ? "중식" : listName == "dinnerList" ? "석식" : "None";
         }
     }
 }
