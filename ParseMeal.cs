@@ -85,10 +85,17 @@ class ParseMeal
     {
         // 처리 결과를 담을 변수
         ArrayList[] result = new ArrayList[3];
-
+        JObject root = null;
 
         // 응답 받아오기
-        JObject root = JObject.Parse(mealWebRequest(date));
+        try
+        {
+            root = JObject.Parse(mealWebRequest(date));
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
 
 
         // 응답 최상단에 RESULT가 실려 온 경우, 조회가 안된것이므로 정보가 없다는 내용을 실어 반환

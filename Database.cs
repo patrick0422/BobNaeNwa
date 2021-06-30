@@ -1,24 +1,21 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BobNaeNwa
 {
+    // MySqlConnection connection = new MySqlConnection($"Server=localhost;Port=3306;Database=bobnaenwa;Uid=root;Pwd=12341234");
     class Meal
     {
-        public int idx;
-        public int timing_idx;
+        public int popular;
+        public int timing;
         public string menu_name;
 
-        public Meal(int idx, int timing_idx, string menu_name)
+        public Meal(int popular, int timing, string menu_name)
         {
-            this.idx = idx; this.timing_idx = timing_idx; this.menu_name = menu_name;
+            this.popular = popular; this.timing = timing; this.menu_name = menu_name;
         }
     }
-
 
     class like_meal
     {
@@ -27,7 +24,7 @@ namespace BobNaeNwa
         {
             if (connection == null)
             {
-                connection = new MySqlConnection($"Server=localhost;Port=3306;Database=bobnaenwa;Uid=root;Pwd=1234");
+                connection = new MySqlConnection($"Server=localhost;Port=3306;Database=bobnaenwa;Uid=root;Pwd=12341234");
                 return connection;
             }
             else
@@ -79,11 +76,11 @@ namespace BobNaeNwa
                 Console.WriteLine(ex.ToString());
             }
         }
-        public static List<Meal> GetMeals(MySqlConnection connection)
+        public static List<Meal> GetMeals(MySqlConnection connection, string dtime)
         {
             List<Meal> result = new List<Meal>();
 
-            string query = $"SELECT * FROM like_meal;";
+            string query = $"select count(l.idx) as popular, t.idx as timing, l.menu_name from timing_list t, like_meal l where t.idx = l.timing_idx and l.created_at > str_to_date('{dtime}', '%Y%m%d') group by l.menu_name order by popular DESC;";
             try//예외 처리
             {
                 connection.Open();
@@ -91,16 +88,17 @@ namespace BobNaeNwa
                 //ExecuteReader를 이용하여 연결 모드로 데이터 가져오기
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader table = cmd.ExecuteReader();
-
                 while (table.Read())
                 {
-                    Console.WriteLine($"{table["idx"]}, {table["timing_list_idx"]}, {table["menu_name"]}");
-                    result.Add(new Meal((int)table["idx"], (int)table["timing_list_idx"], (string)table["menu_name"]));
+                    result.Add(new Meal(int.Parse(table[0].ToString()), int.Parse(table[1].ToString()), table[2].ToString()));
                 }
                 table.Close();
 
             }
-            catch (Exception ex) {}
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
 
             return result;
         }
