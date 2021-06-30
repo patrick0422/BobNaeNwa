@@ -121,8 +121,10 @@ class ParseMeal
         // 조식, 중식만 있을 때 석식에 수동으로 정보 없음 문구 추가
         if (rowArray.Count <= 2)
         {
-            result[2] = new ArrayList();
-            result[2].Add("정보 없음");
+            result[2] = new ArrayList
+            {
+                "정보 없음"
+            };
         }
         for (int i = 0; i < rowArray.Count; i++)
         {
@@ -138,6 +140,7 @@ class ParseMeal
                 for (int j = 0; j <= 9; j++)
                     meal = meal.Split(j.ToString()[0])[0];
                 meal = meal.Split('*')[0];
+                meal = meal.Split('.')[0];
 
                 list.Add(meal);
             }
@@ -145,8 +148,6 @@ class ParseMeal
 
             result[i] = list;
         }
-
-        
 
         return result;
     }

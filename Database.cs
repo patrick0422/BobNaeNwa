@@ -24,7 +24,7 @@ namespace BobNaeNwa
         {
             if (connection == null)
             {
-                connection = new MySqlConnection($"Server=localhost;Port=3306;Database=bobnaenwa;Uid=root;Pwd=12341234");
+                connection = new MySqlConnection($"Server=localhost;Port=3306;Database=bobnaenwa;Uid=root;Pwd=1234");
                 return connection;
             }
             else
@@ -44,11 +44,11 @@ namespace BobNaeNwa
             try//예외 처리
             {
                 MySqlCommand command = new MySqlCommand(query, connection);
-                Console.WriteLine(command.ExecuteNonQuery());
+                command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                // 테이블이 이미 생성되어 있을 경우
             }
         }
 
@@ -72,8 +72,7 @@ namespace BobNaeNwa
             }
             catch (Exception ex)
             {
-                Console.WriteLine("실패");
-                Console.WriteLine(ex.ToString());
+                BobNaeNwa.ShowMsg(ex.ToString());
             }
         }
         public static List<Meal> GetMeals(MySqlConnection connection, string dtime)
@@ -116,7 +115,7 @@ namespace BobNaeNwa
             try//예외 처리
             {
                 MySqlCommand command = new MySqlCommand(query, connection);
-                Console.WriteLine(command.ExecuteNonQuery());
+                command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

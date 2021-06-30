@@ -31,6 +31,8 @@ namespace BobNaeNwa
         {
             using (MySqlConnection connection = like_meal.getConnection())
             {
+                connection.Open();
+
                 timing_list.CreateTable(connection);
                 like_meal.CreateTable(connection);
 
@@ -157,11 +159,12 @@ namespace BobNaeNwa
 
             using(MySqlConnection connection = like_meal.getConnection())
             {
+                connection.Open();
                 like_meal.Insert(timing_list_idx.ToString(), menu_name, connection);
             }
             
             
-            MessageBox.Show($"{aboutMeal[2]} (은)는 맛있습니다.", "맛있다!");
+            MessageBox.Show($"{aboutMeal[2]}가 맛있었던 급식 목록에 추가되었습니다.", "맛있다!");
         }
 
 
@@ -189,6 +192,11 @@ namespace BobNaeNwa
         private void buttonRank_Click(object sender, EventArgs e)
         {
             new RankingForm().ShowDialog();
+        }
+
+        public static void ShowMsg(string msg)
+        {
+            MessageBox.Show(msg);
         }
     }
 }
