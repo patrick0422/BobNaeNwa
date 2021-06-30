@@ -34,7 +34,6 @@ namespace BobNaeNwa
             this.buttonMonth = new System.Windows.Forms.Button();
             this.buttonWeek = new System.Windows.Forms.Button();
             this.labelMaker = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -92,21 +91,11 @@ namespace BobNaeNwa
             this.labelMaker.Text = "양태웅, 오병진";
             this.labelMaker.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(408, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 12);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
-            // 
             // RankingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 594);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelMaker);
             this.Controls.Add(this.buttonWeek);
             this.Controls.Add(this.buttonMonth);
@@ -126,6 +115,5 @@ namespace BobNaeNwa
         private System.Windows.Forms.Button buttonMonth;
         private System.Windows.Forms.Button buttonWeek;
         private System.Windows.Forms.Label labelMaker;
-        private System.Windows.Forms.Label label1;
     }
 }

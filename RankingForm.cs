@@ -72,8 +72,6 @@ namespace BobNaeNwa
                 listBox1.Items.Add($"{timing[column.timing]} : {column.menu_name} ❤ {column.popular}");
             }
 
-            label1.Text = dtime.ToString("yyyyMMdd");
-
         }
     }
 }
