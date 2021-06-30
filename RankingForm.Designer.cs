@@ -34,11 +34,12 @@ namespace BobNaeNwa
             this.buttonMonth = new System.Windows.Forms.Button();
             this.buttonWeek = new System.Windows.Forms.Button();
             this.labelMaker = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(12, 60);
@@ -48,7 +49,7 @@ namespace BobNaeNwa
             // 
             // buttonYear
             // 
-            this.buttonYear.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.buttonYear.Location = new System.Drawing.Point(208, 12);
             this.buttonYear.Name = "buttonYear";
             this.buttonYear.Size = new System.Drawing.Size(92, 34);
@@ -59,7 +60,7 @@ namespace BobNaeNwa
             // 
             // buttonMonth
             // 
-            this.buttonMonth.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.buttonMonth.Location = new System.Drawing.Point(110, 12);
             this.buttonMonth.Name = "buttonMonth";
             this.buttonMonth.Size = new System.Drawing.Size(92, 34);
@@ -70,7 +71,7 @@ namespace BobNaeNwa
             // 
             // buttonWeek
             // 
-            this.buttonWeek.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.buttonWeek.Location = new System.Drawing.Point(12, 12);
             this.buttonWeek.Name = "buttonWeek";
             this.buttonWeek.Size = new System.Drawing.Size(92, 34);
@@ -83,19 +84,29 @@ namespace BobNaeNwa
             // 
             this.labelMaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMaker.AutoSize = true;
-            this.labelMaker.Font = new System.Drawing.Font("AppleSDGothicNeoUL00", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelMaker.Location = new System.Drawing.Point(368, 568);
             this.labelMaker.Name = "labelMaker";
-            this.labelMaker.Size = new System.Drawing.Size(93, 17);
+            this.labelMaker.Size = new System.Drawing.Size(94, 18);
             this.labelMaker.TabIndex = 3;
             this.labelMaker.Text = "양태웅, 오병진";
             this.labelMaker.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(408, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 12);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
             // 
             // RankingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 594);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelMaker);
             this.Controls.Add(this.buttonWeek);
             this.Controls.Add(this.buttonMonth);
@@ -115,5 +126,6 @@ namespace BobNaeNwa
         private System.Windows.Forms.Button buttonMonth;
         private System.Windows.Forms.Button buttonWeek;
         private System.Windows.Forms.Label labelMaker;
+        private System.Windows.Forms.Label label1;
     }
 }
