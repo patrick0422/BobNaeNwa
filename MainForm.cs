@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +16,30 @@ namespace BobNaeNwa
     {
         DateTime date = DateTime.Now;
 
+        int timing_list_idx;
+        string menu_name;
+
         public BobNaeNwa()
         {
             InitializeComponent();
-
+            InitializeDatabase();
             UpdateMeal();
         }
+
+        // DB 초기화
+        private void InitializeDatabase()
+        {
+            using (MySqlConnection connection = like_meal.getConnection())
+            {
+                timing_list.CreateTable(connection);
+                like_meal.CreateTable(connection);
+
+                timing_list.Insert("breakfast", connection);
+                timing_list.Insert("lunch", connection);
+                timing_list.Insert("dinner", connection);
+            }
+        }
+
         // 이전날 급식 요청하는 함수
         private void buttonPrev_Click(object sender, EventArgs e)
         {
@@ -104,7 +123,7 @@ namespace BobNaeNwa
             return strDay;
         }
 
-        // 급식을 클릭했을 때 이벤트
+        // 급식을 더블 클릭했을 때 이벤트
         /*
         private void OnMealDoubleClick(object sender, MouseEventArgs e)
         {
@@ -129,38 +148,47 @@ namespace BobNaeNwa
         private void buttonLike_Click(object sender, EventArgs e)
         {
             string selectedMeal = textBox1.Text.Trim();
+
+            // 아무 메뉴도 선택하지 않았을 때는 무시
             if (selectedMeal == "")
                 return;
+
             string[] aboutMeal = selectedMeal.Split("의 ".ToCharArray());
 
-            /* TODO
-                DB에 selectedMeal 추가 or 뭐시기
-            */
+            using(MySqlConnection connection = like_meal.getConnection())
+            {
+                like_meal.Insert(timing_list_idx.ToString(), menu_name, connection);
+            }
             
             
             MessageBox.Show($"{aboutMeal[2]} (은)는 맛있습니다.", "맛있다!");
         }
+
+
         private int getTimingIdxFromTimingValue(string timingValue)
         {
             return timingValue == "조식" ? 1 : timingValue == "중식" ? 2 : timingValue == "석식" ? 3 : 0;
         }
-        // 맛있었던 급식 버튼
-        private void buttonRank_Click(object sender, EventArgs e)
+        private string getMealTimingFromListName(string listName)
         {
-            new RankingForm().ShowDialog();
+            return listName == "breakfastList" ? "조식" : listName == "lunchList" ? "중식" : listName == "dinnerList" ? "석식" : "None";
         }
 
+        // 메뉴 선택시 이벤트
         private void OnSelectedIndexChanged(object sender, EventArgs e)
         {
             ListBox list = sender as ListBox;
 
-            
-
             textBox1.Text = $"{getMealTimingFromListName(list.Name)}의 {list.SelectedItem.ToString()}";
+
+            timing_list_idx = getTimingIdxFromTimingValue(getMealTimingFromListName(list.Name));
+            menu_name = list.SelectedItem.ToString();
         }
-        private string getMealTimingFromListName(string listName)
+
+        // 맛있었던 급식 버튼
+        private void buttonRank_Click(object sender, EventArgs e)
         {
-            return listName == "breakfastList" ? "조식" : listName == "lunchList" ? "중식" : listName == "dinnerList" ? "석식" : "None";
+            new RankingForm().ShowDialog();
         }
     }
 }
