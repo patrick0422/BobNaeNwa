@@ -137,9 +137,7 @@ namespace BobNaeNwa
                 DB에 selectedMeal 추가 or 뭐시기
             */
             
-            //MySqlController msCtr = new MySqlController();
-            //string sql = $"insert into like_meal(timing_idx, menu_name) values ({getTimingIdxFromTimingValue(aboutMeal[0])}, '{aboutMeal[2]}');";
-            //DataSet ds = msCtr.ExcuteSQL(sql);
+            
             MessageBox.Show($"{aboutMeal[2]} (은)는 맛있습니다.", "맛있다!");
         }
         private int getTimingIdxFromTimingValue(string timingValue)
