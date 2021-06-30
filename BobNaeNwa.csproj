@@ -111,7 +111,6 @@
     <Compile Include="RankingForm.Designer.cs">
       <DependentUpon>RankingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MySqlController.cs" />
     <Compile Include="ParseMeal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

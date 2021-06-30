@@ -1,13 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BobNaeNwa
 {
-    // MySqlConnection connection = new MySqlConnection($"Server=localhost;Port=3306;Database=bobnaenwa;Uid=root;Pwd=1234");
+    // MySqlConnection connection = new MySqlConnection($"Server=localhost;Port=3306;Database=bobnaenwa;Uid=root;Pwd=12341234");
     class like_meal
     {
         public static void CreateTable(MySqlConnection connection)
@@ -54,6 +50,28 @@ namespace BobNaeNwa
                 Console.WriteLine("실패");
                 Console.WriteLine(ex.ToString());
             }
+        }
+        public static MySqlDataReader selectLikeMeal(MySqlConnection connection, string dtime)
+        {
+            MySqlDataReader table = null;
+            string query = $"select count(l.idx), t.value, l.menu_name from timing_list t, like_menu l where t.idx == l.timing_idx and created_at > {dtime} order by asc";
+            try
+            {
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                table = cmd.ExecuteReader();
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return table;
         }
     }
     class timing_list

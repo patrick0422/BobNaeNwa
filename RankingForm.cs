@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,22 +37,27 @@ namespace BobNaeNwa
 
         private void OnRangeChanged(string range)
         {
+            MySqlConnection connection = new MySqlConnection($"Server=localhost;Port=3306;Database=bobnaenwa;Uid=root;Pwd=12341234");
+            DateTime dtime = DateTime.Now;
+
             listBox1.Items.Clear();
 
             switch (range.ToString())
             {
                 case "주간":
-                    
+                    dtime.AddDays(-7);
                     break;
                 case "월간":
-                    
+                    dtime.AddMonths(1);
                     break;
                 case "연간":
-                    
+                    dtime.AddYears(1);
                     break;
                 default:
                     break;
             }
+
+            Database.
         }
     }
 }
