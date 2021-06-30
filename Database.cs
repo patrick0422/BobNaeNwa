@@ -31,7 +31,7 @@ namespace BobNaeNwa
             }
         }
 
-        public static int Insert(string timing_list_idx, string menu_name, MySqlConnection connection)
+        public static void Insert(string timing_list_idx, string menu_name, MySqlConnection connection)
         {
             string query = $"INSERT INTO  VALUES({timing_list_idx}, '{menu_name}');";
             try//예외 처리
