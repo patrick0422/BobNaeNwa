@@ -182,7 +182,10 @@ namespace BobNaeNwa
         {
             ListBox list = sender as ListBox;
 
-            textBox1.Text = $"{getMealTimingFromListName(list.Name)}의 {list.SelectedItem.ToString()}";
+            if (list.SelectedItem == null)
+                return;
+
+            textBox1.Text = $"{getMealTimingFromListName(list.Name)}의 {list.SelectedItem}";
 
             timing_list_idx = getTimingIdxFromTimingValue(getMealTimingFromListName(list.Name));
             menu_name = list.SelectedItem.ToString();
